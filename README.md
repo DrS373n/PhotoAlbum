@@ -157,7 +157,6 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 
 ## Acknowledgments
 
-- Inspired by [Fundy Designer](https://www.fundydesigner.com/) and professional album design software
 - Built with [WinUI3](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/) and the Windows App SDK
 - Face detection powered by [ONNX Runtime](https://onnxruntime.ai/)
 - Image processing with [ImageSharp](https://sixlabors.com/products/imagesharp/)
