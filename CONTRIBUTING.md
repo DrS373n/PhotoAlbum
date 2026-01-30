@@ -52,6 +52,19 @@ Feature suggestions are welcome! Please:
 - Visual Studio 2022 (recommended) or VS Code
 - Windows App SDK workload (for UI development)
 
+### Quick Setup with Automated Installer
+
+Run the automated installer to set up all prerequisites:
+
+```powershell
+cd Prerequisites
+.\Install-Prerequisites.ps1 -Development
+```
+
+This will install .NET 9.0 SDK and provide guidance for setting up Visual Studio 2022.
+
+For more details, see [Prerequisites/README.md](Prerequisites/README.md).
+
 ### Getting Started
 
 1. Clone the repository:
