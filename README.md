@@ -145,8 +145,31 @@ PhotoAlbum/
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
+
+## Acknowledgments
+
+- Inspired by [Fundy Designer](https://www.fundydesigner.com/) and professional album design software
+- Built with [WinUI3](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/) and the Windows App SDK
+- Face detection powered by [ONNX Runtime](https://onnxruntime.ai/)
+- Image processing with [ImageSharp](https://sixlabors.com/products/imagesharp/)
+- MVVM with [CommunityToolkit.Mvvm](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/)
+
+## Support
+
+For questions, issues, or feature requests, please:
+- Check the [documentation](GETTING_STARTED.md)
+- Search [existing issues](https://github.com/DrS373n/PhotoAlbum/issues)
+- Create a [new issue](https://github.com/DrS373n/PhotoAlbum/issues/new)
+
+---
+
+Made with ❤️ for wedding photographers and designers
