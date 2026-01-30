@@ -11,6 +11,41 @@ This guide will help you get started with PhotoAlbum wedding album designer soft
    - Windows App SDK workload
    - .NET desktop development workload
 
+### Automated Installation (Recommended)
+
+We provide automated scripts to install all prerequisites:
+
+**Option 1: Using PowerShell (Recommended)**
+
+Open PowerShell and run:
+```powershell
+cd Prerequisites
+.\Install-Prerequisites.ps1
+```
+
+For development setup with Visual Studio guidance:
+```powershell
+.\Install-Prerequisites.ps1 -Development
+```
+
+**Option 2: Using Batch File**
+
+Double-click `Prerequisites\Install-Prerequisites.bat` or run from Command Prompt:
+```cmd
+cd Prerequisites
+Install-Prerequisites.bat
+```
+
+**Verify Installation**
+
+After installation, verify everything is set up correctly:
+```powershell
+cd Prerequisites
+.\Verify-Prerequisites.ps1
+```
+
+For detailed installation instructions, see [Prerequisites/README.md](Prerequisites/README.md).
+
 ### Building from Source
 
 1. Clone the repository:

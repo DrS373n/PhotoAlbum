@@ -73,6 +73,26 @@ WinUI3 application:
 - .NET 9.0 SDK
 - Visual Studio 2022 with Windows App SDK workload
 
+### Quick Installation
+
+**Automated Setup (Recommended)**
+
+Run the automated installer to download and install all prerequisites:
+
+```powershell
+cd Prerequisites
+.\Install-Prerequisites.ps1
+```
+
+Or double-click `Prerequisites\Install-Prerequisites.bat` on Windows.
+
+For development setup:
+```powershell
+.\Install-Prerequisites.ps1 -Development
+```
+
+See [Prerequisites/README.md](Prerequisites/README.md) for detailed installation instructions.
+
 ### Building
 ```bash
 dotnet restore
