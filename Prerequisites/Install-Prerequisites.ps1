@@ -239,6 +239,20 @@ if (-not $SkipDotNet) {
 # Show Windows App SDK information
 Show-WindowsAppSdkInfo
 
+# Configure NuGet
+Write-Header "Configuring NuGet Package Sources"
+Write-Host "Running NuGet configuration script..." -ForegroundColor Yellow
+Write-Host "This ensures package sources are properly configured.`n" -ForegroundColor Gray
+
+$configureScript = Join-Path $PSScriptRoot "Configure-NuGet.ps1"
+if (Test-Path $configureScript) {
+    & $configureScript
+}
+else {
+    Write-Warning "Configure-NuGet.ps1 not found. You may need to configure NuGet manually."
+    Write-Host "  See Prerequisites\TROUBLESHOOTING.md for help with NuGet issues." -ForegroundColor Yellow
+}
+
 # Show summary
 Show-Summary
 

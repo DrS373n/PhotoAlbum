@@ -11,6 +11,7 @@ PhotoAlbum requires the following components:
 3. **Visual Studio 2022** (Optional but recommended for development)
    - Windows App SDK workload
    - .NET desktop development workload
+4. **NuGet Package Sources** - Properly configured to download dependencies
 
 ## Quick Installation
 
@@ -25,7 +26,8 @@ Run the following command in PowerShell (as Administrator):
 This will:
 - Check if .NET 9.0 SDK is installed
 - Download and install .NET 9.0 SDK if needed
-- Download and cache Windows App SDK installer
+- Configure NuGet package sources
+- Verify package restoration works
 - Provide instructions for any manual steps required
 
 ### For Developers (Development Setup)
@@ -81,7 +83,39 @@ This will check:
 - Windows App SDK availability
 - Visual Studio installation (if applicable)
 
+## NuGet Package Configuration
+
+If you encounter NuGet package resolution errors (NU1100), run:
+
+```powershell
+.\Configure-NuGet.ps1
+```
+
+This will:
+- Verify NuGet package sources are configured
+- Test internet connectivity to NuGet.org
+- Clear corrupted cache if needed
+- Test package restoration
+
+For persistent issues, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+
 ## Troubleshooting
+
+### NuGet Package Errors (NU1100)
+
+If you see errors like "Unable to resolve 'PackageName'":
+
+1. Run the NuGet configuration script:
+   ```powershell
+   .\Configure-NuGet.ps1
+   ```
+
+2. If still failing, reset NuGet cache:
+   ```powershell
+   .\Configure-NuGet.ps1 -Reset
+   ```
+
+3. See detailed solutions in [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
 ### .NET SDK Not Found
 
