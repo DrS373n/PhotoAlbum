@@ -38,12 +38,12 @@ function Write-Success {
     Write-Host "[✓] $Message" -ForegroundColor Green
 }
 
-function Write-Warning {
+function Write-WarningMessage {
     param([string]$Message)
     Write-Host "[!] $Message" -ForegroundColor Yellow
 }
 
-function Write-Error {
+function Write-ErrorMessage {
     param([string]$Message)
     Write-Host "[✗] $Message" -ForegroundColor Red
 }
@@ -64,13 +64,13 @@ function Test-InternetConnection {
             return $true
         }
         else {
-            Write-Warning "Cannot reach api.nuget.org"
+            Write-WarningMessage "Cannot reach api.nuget.org"
             Write-Host "  This may indicate network issues or firewall blocking NuGet." -ForegroundColor Yellow
             return $false
         }
     }
     catch {
-        Write-Warning "Unable to test internet connection"
+        Write-WarningMessage "Unable to test internet connection"
         return $false
     }
 }
@@ -87,13 +87,13 @@ function Get-NuGetSources {
             return $true
         }
         else {
-            Write-Error "Failed to list NuGet sources"
+            Write-ErrorMessage "Failed to list NuGet sources"
             Write-Host $sources -ForegroundColor Red
             return $false
         }
     }
     catch {
-        Write-Error "Error checking NuGet sources: $_"
+        Write-ErrorMessage "Error checking NuGet sources: $_"
         return $false
     }
 }
@@ -114,7 +114,7 @@ function Add-DefaultNuGetSource {
                 return $true
             }
             else {
-                Write-Error "Failed to add nuget.org source"
+                Write-ErrorMessage "Failed to add nuget.org source"
                 return $false
             }
         }
@@ -124,7 +124,7 @@ function Add-DefaultNuGetSource {
         }
     }
     catch {
-        Write-Error "Error adding NuGet source: $_"
+        Write-ErrorMessage "Error adding NuGet source: $_"
         return $false
     }
 }
@@ -143,12 +143,12 @@ function Clear-NuGetCache {
                 return $true
             }
             else {
-                Write-Error "Failed to clear NuGet cache"
+                Write-ErrorMessage "Failed to clear NuGet cache"
                 return $false
             }
         }
         catch {
-            Write-Error "Error clearing NuGet cache: $_"
+            Write-ErrorMessage "Error clearing NuGet cache: $_"
             return $false
         }
     }
@@ -165,7 +165,7 @@ function Test-PackageRestore {
     $coreProject = Join-Path $projectRoot "PhotoAlbum.Core\PhotoAlbum.Core.csproj"
     
     if (-not (Test-Path $coreProject)) {
-        Write-Warning "PhotoAlbum.Core.csproj not found, skipping restore test"
+        Write-WarningMessage "PhotoAlbum.Core.csproj not found, skipping restore test"
         return $true
     }
     
@@ -178,7 +178,7 @@ function Test-PackageRestore {
             return $true
         }
         else {
-            Write-Error "Package restore failed"
+            Write-ErrorMessage "Package restore failed"
             Write-Host "`nError output:" -ForegroundColor Yellow
             $output | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
             Write-Host "`nCommon causes:" -ForegroundColor Yellow
@@ -190,7 +190,7 @@ function Test-PackageRestore {
         }
     }
     catch {
-        Write-Error "Error during package restore: $_"
+        Write-ErrorMessage "Error during package restore: $_"
         return $false
     }
 }
@@ -273,7 +273,7 @@ if ($internetOk -and $sourcesOk -and $sourceAdded -and $restoreOk) {
     Write-Host "  dotnet build" -ForegroundColor Gray
 }
 else {
-    Write-Warning "Some issues were detected during configuration."
+    Write-WarningMessage "Some issues were detected during configuration."
     
     if (-not $internetOk) {
         Write-Host "`nInternet connectivity issues detected." -ForegroundColor Yellow

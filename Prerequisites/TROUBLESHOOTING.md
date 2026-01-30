@@ -138,16 +138,20 @@ cd Prerequisites
 .\Install-Prerequisites.ps1 -Force
 ```
 
-### Solution 8: Update NuGet Client
+### Solution 8: Check .NET SDK Version
 
-Update the NuGet client tools:
+Ensure you have the latest .NET 9.0 SDK:
 
 ```powershell
-# Update dotnet CLI
-dotnet tool update -g dotnet
+# Check current SDK version
+dotnet --version
 
-# Or update NuGet standalone
-dotnet tool update -g nuget
+# Check all installed SDKs
+dotnet --list-sdks
+
+# If .NET 9.0 is not the latest, reinstall
+cd Prerequisites
+.\Install-Prerequisites.ps1 -Force
 ```
 
 ### Solution 9: Disable Parallel Restore

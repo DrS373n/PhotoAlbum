@@ -62,12 +62,12 @@ function Write-Success {
     Write-Host "[✓] $Message" -ForegroundColor Green
 }
 
-function Write-Warning {
+function Write-WarningMessage {
     param([string]$Message)
     Write-Host "[!] $Message" -ForegroundColor Yellow
 }
 
-function Write-Error {
+function Write-ErrorMessage {
     param([string]$Message)
     Write-Host "[✗] $Message" -ForegroundColor Red
 }
@@ -115,10 +115,11 @@ function Install-DotNetSDK {
     $installerPath = Join-Path $InstallerDir $installerName
     
     # Download URLs for different architectures
+    # Note: These URLs point to .NET 9.0.101. For latest version, visit: https://dotnet.microsoft.com/download/dotnet/9.0
     $downloadUrls = @{
         "x64" = "https://download.visualstudio.microsoft.com/download/pr/42f39ab2-ff0a-4b93-8dfe-26c6543ce3f9/7d2822d57e3fb02981484e8d79c8c26f/dotnet-sdk-9.0.101-win-x64.exe"
         "x86" = "https://download.visualstudio.microsoft.com/download/pr/d9d43c59-b9f4-47b7-a520-da3a7fa255dc/8f77dd8e2e84d5e5d8c8e19b3f81b9e8/dotnet-sdk-9.0.101-win-x86.exe"
-        "arm64" = "https://download.visualstudio.microsoft.com/download/pr/f55ee1e8-e3d5-4c0f-ba15-f8dbcf8c1c5e/8e0d2e3c5e3f5c0e5e0e0e0e0e0e0e0e/dotnet-sdk-9.0.101-win-arm64.exe"
+        "arm64" = "https://download.visualstudio.microsoft.com/download/pr/23f38ffc-67d7-4f32-9f25-8f54d266f749/0ebfa1a5c07f962bef2f1fce41b3f372/dotnet-sdk-9.0.101-win-arm64.exe"
     }
     
     $downloadUrl = $downloadUrls[$arch]
@@ -135,8 +136,8 @@ function Install-DotNetSDK {
         
         # Run installer
         Write-Host "`nRunning installer..." -ForegroundColor Yellow
-        Write-Host "  NOTE: This may take several minutes and will open an installation window." -ForegroundColor Gray
-        Write-Host "  Please follow the installation prompts." -ForegroundColor Gray
+        Write-Host "  NOTE: This is a silent installation that runs in the background." -ForegroundColor Gray
+        Write-Host "  Please wait for the installation to complete." -ForegroundColor Gray
         
         $process = Start-Process -FilePath $installerPath -ArgumentList "/quiet", "/norestart" -Wait -PassThru
         
@@ -149,12 +150,12 @@ function Install-DotNetSDK {
             Write-Warning "A system restart is required to complete the installation."
         }
         else {
-            Write-Error "Installation failed with exit code: $($process.ExitCode)"
+            Write-ErrorMessage "Installation failed with exit code: $($process.ExitCode)"
             Write-Host "  You can run the installer manually from: $installerPath" -ForegroundColor Yellow
         }
     }
     catch {
-        Write-Error "Failed to download or install .NET SDK: $_"
+        Write-ErrorMessage "Failed to download or install .NET SDK: $_"
         Write-Host "`nYou can download it manually from:" -ForegroundColor Yellow
         Write-Host "  $DotNetDownloadUrl" -ForegroundColor Cyan
     }
@@ -192,7 +193,7 @@ function Show-Summary {
         Write-Host "  Version: $version" -ForegroundColor Gray
     }
     else {
-        Write-Warning ".NET 9.0 SDK not detected"
+        Write-WarningMessage ".NET 9.0 SDK not detected"
         Write-Host "  Please restart your terminal and run 'dotnet --version' to verify." -ForegroundColor Yellow
     }
     
@@ -207,7 +208,7 @@ function Show-Summary {
     Write-Host "  3. Navigate to the project root and run: dotnet build" -ForegroundColor Gray
     
     if ($Development) {
-        Write-Host "  4. Open PhotoAlbum.sln in Visual Studio 2022" -ForegroundColor Gray
+        Write-Host "  4. Open PhotoAlbum.slnx in Visual Studio 2022" -ForegroundColor Gray
     }
 }
 
@@ -227,7 +228,7 @@ Write-Host "This script will install the required prerequisites for PhotoAlbum.`
 # Check if running as administrator
 $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
-    Write-Warning "Not running as Administrator. Some installations may require elevation."
+    Write-WarningMessage "Not running as Administrator. Some installations may require elevation."
     Write-Host "  Consider running PowerShell as Administrator for best results.`n" -ForegroundColor Yellow
 }
 
