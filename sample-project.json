@@ -1,0 +1,186 @@
+{
+  "id": "123e4567-e89b-12d3-a456-426614174000",
+  "name": "Sample Wedding Album",
+  "clientName": "Sarah & John",
+  "weddingDate": "2024-06-15T00:00:00",
+  "createdDate": "2024-01-01T10:00:00",
+  "modifiedDate": "2024-01-15T15:30:00",
+  "settings": {
+    "width": 12.0,
+    "height": 12.0,
+    "orientation": "Landscape",
+    "pagesPerSpread": 2,
+    "bleedSize": 0.125,
+    "safeZoneSize": 0.25,
+    "showCutLines": true,
+    "showSafeZones": true,
+    "coverType": "Standard"
+  },
+  "spreads": [
+    {
+      "id": "spread-1",
+      "spreadNumber": 0,
+      "type": "Cover",
+      "rightPage": {
+        "id": "page-1",
+        "pageNumber": 1,
+        "dropZones": [
+          {
+            "id": "zone-1",
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 12,
+            "rotation": 0,
+            "shape": "Rectangle",
+            "zIndex": 1,
+            "photo": {
+              "id": "photo-1",
+              "filePath": "C:\\Photos\\cover.jpg",
+              "scale": 1.2,
+              "offsetX": -0.5,
+              "offsetY": 0,
+              "rotation": 0,
+              "detectedFaces": []
+            }
+          }
+        ],
+        "textElements": [
+          {
+            "id": "text-1",
+            "text": "Sarah & John\nJune 15, 2024",
+            "x": 3,
+            "y": 9,
+            "width": 6,
+            "height": 2,
+            "fontFamily": "Playfair Display",
+            "fontSize": 48,
+            "color": "#FFFFFF",
+            "alignment": "Center",
+            "isBold": true,
+            "isItalic": false,
+            "rotation": 0,
+            "language": "en-US"
+          }
+        ],
+        "background": {
+          "color": "#000000",
+          "opacity": 0.3
+        }
+      }
+    },
+    {
+      "id": "spread-2",
+      "spreadNumber": 1,
+      "type": "Regular",
+      "leftPage": {
+        "id": "page-2",
+        "pageNumber": 2,
+        "dropZones": [
+          {
+            "id": "zone-2",
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 12,
+            "rotation": 0,
+            "shape": "Rectangle",
+            "zIndex": 1,
+            "photo": {
+              "id": "photo-2",
+              "filePath": "C:\\Photos\\ceremony1.jpg",
+              "scale": 1.0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "rotation": 0,
+              "detectedFaces": [
+                {
+                  "id": "face-1",
+                  "x": 450,
+                  "y": 200,
+                  "width": 300,
+                  "height": 300,
+                  "confidence": 0.95,
+                  "personId": "person-1",
+                  "personName": "Sarah"
+                }
+              ]
+            }
+          }
+        ],
+        "textElements": [],
+        "template": {
+          "id": "template-1",
+          "name": "Full Bleed",
+          "category": "Single Photo"
+        }
+      },
+      "rightPage": {
+        "id": "page-3",
+        "pageNumber": 3,
+        "dropZones": [
+          {
+            "id": "zone-3",
+            "x": 0,
+            "y": 0,
+            "width": 5.9,
+            "height": 5.9,
+            "rotation": 0,
+            "shape": "Rectangle",
+            "zIndex": 1
+          },
+          {
+            "id": "zone-4",
+            "x": 6.1,
+            "y": 0,
+            "width": 5.9,
+            "height": 5.9,
+            "rotation": 0,
+            "shape": "Rectangle",
+            "zIndex": 1
+          },
+          {
+            "id": "zone-5",
+            "x": 0,
+            "y": 6.1,
+            "width": 5.9,
+            "height": 5.9,
+            "rotation": 0,
+            "shape": "Rectangle",
+            "zIndex": 1
+          },
+          {
+            "id": "zone-6",
+            "x": 6.1,
+            "y": 6.1,
+            "width": 5.9,
+            "height": 5.9,
+            "rotation": 0,
+            "shape": "Rectangle",
+            "zIndex": 1
+          }
+        ],
+        "textElements": [],
+        "template": {
+          "id": "template-4",
+          "name": "Four Grid",
+          "category": "Four Photos"
+        }
+      }
+    }
+  ],
+  "subProjects": [
+    {
+      "id": "subproject-1",
+      "name": "Guest Book",
+      "type": "GuestBook",
+      "settings": {
+        "width": 8.5,
+        "height": 11,
+        "orientation": "Portrait"
+      },
+      "spreads": []
+    }
+  ],
+  "projectPath": "C:\\Projects\\SarahJohn_Wedding.pap"
+}

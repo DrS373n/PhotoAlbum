@@ -1,0 +1,20 @@
+<Application
+    x:Class="PhotoAlbum.App.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="Controls/DropZoneControl.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Color Resources -->
+            <SolidColorBrush x:Key="PrimaryBrush" Color="#0078D4"/>
+            <SolidColorBrush x:Key="SecondaryBrush" Color="#2B88D8"/>
+            <SolidColorBrush x:Key="AccentBrush" Color="#FFB900"/>
+            <SolidColorBrush x:Key="CanvasBackgroundBrush" Color="#F3F3F3"/>
+            <SolidColorBrush x:Key="DropZoneBorderBrush" Color="#0078D4"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

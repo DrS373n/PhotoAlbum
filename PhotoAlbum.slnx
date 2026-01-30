@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PhotoAlbum.App/PhotoAlbum.App.csproj" />
+  <Project Path="PhotoAlbum.Core/PhotoAlbum.Core.csproj" />
+</Solution>
