@@ -1,6 +1,6 @@
 # PhotoAlbum - Professional Wedding Album Designer
 
-A professional wedding album design software built with C# and WinUI3, inspired by Fundy Designer and other leading album design tools.
+A professional wedding album design software built with C# and WinUI3.
 
 ## Features
 
@@ -8,7 +8,7 @@ A professional wedding album design software built with C# and WinUI3, inspired 
 - **Professional Design Canvas**: Intuitive drag-and-drop interface for creating stunning album layouts
 - **Smart Drop Zones**: Flexible photo placement areas with support for various shapes (rectangle, circle, ellipse)
 - **Planner View**: Bird's-eye view of your entire album for easy navigation and organization
-- **Image Well**: Organized photo library with thumbnails, search, and filtering capabilities
+- **Photo Library**: Organized photo library with thumbnails, search, and filtering capabilities
 - **Templates Library**: Pre-designed layout templates for quick album creation
 - **Custom Text Tool**: Add text in multiple languages with full formatting control
 - **Cut Lines & Safe Zones**: Professional print guides to ensure perfect output
@@ -84,11 +84,11 @@ dotnet build
 dotnet run --project PhotoAlbum.App
 ```
 
-## Key Features Inspired by Fundy Designer
+## Key Features
 
 1. **Project Creation Wizard**: Easy setup for new wedding albums
 2. **Design Templates**: Quick-start templates for common layouts
-3. **Image Well**: Organized photo management with thumbnails
+3. **Photo Library**: Organized photo management with thumbnails
 4. **Drop Zones**: Flexible photo placement areas
 5. **Planner View**: Overview of all album pages
 6. **Custom Text Tool**: Multi-language text support
