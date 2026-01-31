@@ -16,7 +16,7 @@ public class FaceDetectionService : IFaceDetectionService
     public FaceDetectionService()
     {
         // In a real implementation, this would load an ONNX model
-        _modelPath = "Models/face-detection.onnx";
+        _modelPath = Path.Combine("Models", "face-detection.onnx");
     }
 
     public async Task<List<DetectedFace>> DetectFacesAsync(string imagePath)

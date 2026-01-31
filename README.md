@@ -69,9 +69,43 @@ WinUI3 application:
 ## Getting Started
 
 ### Prerequisites
-- Windows 10 version 1809 (build 17763) or later
-- .NET 9.0 SDK
-- Visual Studio 2022 with Windows App SDK workload
+- **Windows 10 version 1809 (build 17763) or later** (or Windows 11)
+- **.NET 9.0 SDK** - [Download here](https://dotnet.microsoft.com/download/dotnet/9.0)
+- **Visual Studio 2022** (Optional, for development)
+  - Windows App SDK workload
+  - .NET desktop development workload
+
+### Quick Start for Windows Users
+
+#### Option 1: Using Batch Scripts (Easiest)
+```cmd
+# Build the application
+build.bat
+
+# Run the application
+run.bat
+```
+
+#### Option 2: Using PowerShell Scripts
+```powershell
+# Build the application
+.\build.ps1
+
+# Run the application
+.\run.ps1
+```
+
+#### Option 3: Using .NET CLI
+```bash
+# Restore dependencies
+dotnet restore
+
+# Build the solution
+dotnet build
+
+# Run the application
+dotnet run --project PhotoAlbum.App
+```
 
 ### Building
 ```bash

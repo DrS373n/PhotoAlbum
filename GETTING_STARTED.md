@@ -13,6 +13,44 @@ This guide will help you get started with PhotoAlbum wedding album designer soft
 
 ### Building from Source
 
+#### For Windows Users - Easy Method
+
+1. Clone the repository:
+```cmd
+git clone https://github.com/DrS373n/PhotoAlbum.git
+cd PhotoAlbum
+```
+
+2. Build using the provided batch script:
+```cmd
+build.bat
+```
+
+3. Run the application:
+```cmd
+run.bat
+```
+
+#### Alternative: Using PowerShell
+
+1. Clone the repository:
+```powershell
+git clone https://github.com/DrS373n/PhotoAlbum.git
+cd PhotoAlbum
+```
+
+2. Build using PowerShell script:
+```powershell
+.\build.ps1
+```
+
+3. Run the application:
+```powershell
+.\run.ps1
+```
+
+#### Using .NET CLI Directly
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/DrS373n/PhotoAlbum.git
