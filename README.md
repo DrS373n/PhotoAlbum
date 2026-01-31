@@ -2,6 +2,8 @@
 
 A professional wedding album design software built with C# and WinUI3.
 
+> **📘 Documentation**: New to PhotoAlbum? Check out our [Windows Setup Guide](WINDOWS_SETUP.md) for detailed installation instructions, or jump to [Getting Started](GETTING_STARTED.md) to learn how to use the application.
+
 ## Features
 
 ### Core Design Features
@@ -199,7 +201,8 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 ## Support
 
 For questions, issues, or feature requests, please:
-- Check the [documentation](GETTING_STARTED.md)
+- Check the [Windows Setup Guide](WINDOWS_SETUP.md) for detailed installation instructions
+- Check the [Getting Started Guide](GETTING_STARTED.md) for usage tutorials
 - Search [existing issues](https://github.com/DrS373n/PhotoAlbum/issues)
 - Create a [new issue](https://github.com/DrS373n/PhotoAlbum/issues/new)
 
