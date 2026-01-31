@@ -2,6 +2,8 @@
 
 A professional wedding album design software built with C# and WinUI3.
 
+> **📘 Documentation**: New to PhotoAlbum? Check out our [Windows Setup Guide](WINDOWS_SETUP.md) for detailed installation instructions, or jump to [Getting Started](GETTING_STARTED.md) to learn how to use the application.
+
 ## Features
 
 ### Core Design Features
@@ -69,9 +71,43 @@ WinUI3 application:
 ## Getting Started
 
 ### Prerequisites
-- Windows 10 version 1809 (build 17763) or later
-- .NET 9.0 SDK
-- Visual Studio 2022 with Windows App SDK workload
+- **Windows 10 version 1809 (build 17763) or later** (or Windows 11)
+- **.NET 9.0 SDK** - [Download here](https://dotnet.microsoft.com/download/dotnet/9.0)
+- **Visual Studio 2022** (Optional, for development)
+  - Windows App SDK workload
+  - .NET desktop development workload
+
+### Quick Start for Windows Users
+
+#### Option 1: Using Batch Scripts (Easiest)
+```cmd
+# Build the application
+build.bat
+
+# Run the application
+run.bat
+```
+
+#### Option 2: Using PowerShell Scripts
+```powershell
+# Build the application
+.\build.ps1
+
+# Run the application
+.\run.ps1
+```
+
+#### Option 3: Using .NET CLI
+```bash
+# Restore dependencies
+dotnet restore
+
+# Build the solution
+dotnet build
+
+# Run the application
+dotnet run --project PhotoAlbum.App
+```
 
 ### Building
 ```bash
@@ -165,7 +201,8 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 ## Support
 
 For questions, issues, or feature requests, please:
-- Check the [documentation](GETTING_STARTED.md)
+- Check the [Windows Setup Guide](WINDOWS_SETUP.md) for detailed installation instructions
+- Check the [Getting Started Guide](GETTING_STARTED.md) for usage tutorials
 - Search [existing issues](https://github.com/DrS373n/PhotoAlbum/issues)
 - Create a [new issue](https://github.com/DrS373n/PhotoAlbum/issues/new)
 
